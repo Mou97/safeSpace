@@ -16,13 +16,13 @@ app.set("views", __dirname + "/views");
 
 //imports routes 
 const reportsController = require('./controllers/reports')
-const testController = require('./controllers/test')
+const saveReportController = require('./controllers/saveReport')
 //routes
 app.get('/', (req, res) => {
     res.render('reports')
 })
 app.get('/reports', reportsController)
-app.post('/test', testController)
+app.post('/saveReport', saveReportController)
 
 
 const port = 3000 || process.env.PORT
