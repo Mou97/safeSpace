@@ -18,6 +18,7 @@
 	},
 	"homepage": "https://github.com/Mou97/devfest#readme",
 	"dependencies": {
+		"@southbanksoftware/provendb-node-driver": "^0.1.11",
 		"custom-env": "^1.0.2",
 		"express": "^4.17.1",
 		"pg": "^7.12.1",

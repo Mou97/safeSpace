@@ -1,6 +1,5 @@
 const express = require('express')
 
-
 const app = express()
 
 //connect to the database
@@ -17,6 +16,16 @@ db.authenticate()
 db.sync({ forced: true }).then(() => {
     console.log("database synchronized ");
 });
+
+//imports routes 
+const reportsController = require('./controllers/reports')
+const testController = require('./controllers/test')
+//routes
+app.get('/', (req, res) => {
+    res.send('works')
+})
+app.get('/reports', reportsController)
+app.post('/test', testController)
 
 
 const port = 3000 || process.env.PORT
