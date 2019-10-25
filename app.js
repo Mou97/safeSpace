@@ -1,34 +1,12 @@
 const express = require('express')
-const { MongoClient } = require('mongodb');
-
-const ProvenDB = require('@southbanksoftware/provendb-node-driver').Database;
+const bodyParser = require('body-parser')
 
 const app = express()
 
-// Replace this with the URI from the ProvenDB UI.
-const { provenDB_URI } = require('./config/provenDb');
-const { db_name } = require('./config/provenDb')
-let dbObject;
-let collection;
-let pdb;
 
-// First we establish a connection to ProvenDB.
-MongoClient.connect(provenDB_URI, {
-    useNewUrlParser: true,
-    // useUnifiedTopology: true
-})
-    .then(client => {
-        // Replace this with the database name from the ProvenDB UI.
-        dbObject = client.db('devfest2k19');
-        pdb = new ProvenDB(dbObject); // Mongo Database with helper functions.
-        collection = pdb.collection('provenReport'); // With ProvenDB Driver.
-        console.log('db connected')
-    })
-    .catch(err => {
-        console.error('Error connecting to ProvenDB:');
-        console.error(err);
-        process.exit();
-    });
+//body parser configuration
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //imports routes 
