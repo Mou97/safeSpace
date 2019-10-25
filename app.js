@@ -1,21 +1,35 @@
 const express = require('express')
+const { MongoClient } = require('mongodb');
+
+const ProvenDB = require('@southbanksoftware/provendb-node-driver').Database;
 
 const app = express()
 
-//connect to the database
-const db = require("./config/database");
-db.authenticate()
-    .then(() => {
-        console.log("Database connected");
+// Replace this with the URI from the ProvenDB UI.
+const { provenDB_URI } = require('./config/provenDb');
+const { db_name } = require('./config/provenDb')
+let dbObject;
+let collection;
+let pdb;
+
+// First we establish a connection to ProvenDB.
+MongoClient.connect(provenDB_URI, {
+    useNewUrlParser: true,
+    // useUnifiedTopology: true
+})
+    .then(client => {
+        // Replace this with the database name from the ProvenDB UI.
+        dbObject = client.db('devfest2k19');
+        pdb = new ProvenDB(dbObject); // Mongo Database with helper functions.
+        collection = pdb.collection('provenReport'); // With ProvenDB Driver.
+        console.log('db connected')
     })
-    .catch(error => {
-        console.log(error.message);
+    .catch(err => {
+        console.error('Error connecting to ProvenDB:');
+        console.error(err);
+        process.exit();
     });
 
-//synchronize database
-db.sync({ forced: true }).then(() => {
-    console.log("database synchronized ");
-});
 
 //imports routes 
 const reportsController = require('./controllers/reports')
