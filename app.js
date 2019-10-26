@@ -23,6 +23,9 @@ app.get('/', (req, res) => {
 })
 app.get('/reports', reportsController)
 app.post('/saveReport', saveReportController)
+app.get('/submit', (req, res) => {
+    res.render('submit')
+})
 
 
 const port = 3000 || process.env.PORT

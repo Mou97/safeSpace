@@ -2,8 +2,12 @@
 $(document).ready(function () {
 
     console.log('script loaded')
+    // get speech from input 
     let speech = 'i hate you dude'
+
     let url = "http://127.0.0.1:5000/api?data=" + speech
+
+    //wrap inside on click event
     fetch(url)
         .then(response => response.json())
         .then(data => {
