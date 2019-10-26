@@ -540,6 +540,8 @@ nav .icon-Message_notification {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 160px;
+    text-align: left;
+    
 }
 .report_tb .fa-ellipsis-v{
     cursor: pointer;
