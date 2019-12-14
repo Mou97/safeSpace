@@ -79,13 +79,25 @@ function getHate() {
     var alertH = `<div class="alert alert-danger">There is hate speech in the text</div>`;
     var alertnH = `<div class="alert alert-success">There is no hate speech in the text</div>`;
     var result;
-    $.ajax({
-        url: "http://f9253cc6.ngrok.io/api?data=" + text,
-        method: 'GET',
-        contentType: 'application/json',
-        success: function (result) {
-            result = result.hate ? alertH : alertnH;
-            $("#alerts").html(result);
-        }
-    });
+    let speech = text
+
+    let url = "http://127.0.0.1:5000/api?data=" + speech
+
+    //wrap inside on click event
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            console.log(data == "Hate speech detected.")
+            if (data == "Hate speech detected.") {
+                $('#alerts').html(alertH)
+
+            } else {
+                console.log('no hatefull comment')
+                $('#alerts').html(alertnH)
+
+
+            }
+        })
+        .catch(error => console.error(error))
 }
