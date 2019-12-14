@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const expressEdge = require('express-edge').engine
+const fileUpload = require("express-fileupload");
 
 const app = express()
 
@@ -10,6 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //set up views and front-end files directories
+app.use(fileUpload());
 app.use(express.static("public"));
 app.use(expressEdge);
 app.set("views", __dirname + "/views");

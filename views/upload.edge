@@ -1,0 +1,10 @@
+@layout('layouts.main')
+@section('content')
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="upload">upload a file: </label>
+        <input type="file" name="file" id="upload">
+        <br>
+        <input type="submit" class="btn btn-primary" value="upload file">
+    </form>
+@endsection

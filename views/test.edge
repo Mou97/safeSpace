@@ -1,0 +1,14 @@
+@layout('layouts.main')
+@section('content')
+    <div id="alerts">
+    </div>
+    <form>
+    <div class="form-group">
+        <label for="text">Enter your text here:</label>
+        <textarea name="text" class="form-control" id="text" rows="10"></textarea>
+    </div>
+        <input type="button" onclick="getHate()"
+        value="send text" class="btn btn-primary">
+    </form>
+
+@endsection

@@ -71,3 +71,21 @@ headerProfileAvatar.addEventListener("click", function (event) {
     headerProfileDropdownArrow.classList.toggle("active");
     event.stopPropagation();
 });
+//fetching the API
+
+function getHate() {
+    //getting text
+    var text = $("#text").val();
+    var alertH = `<div class="alert alert-danger">There is hate speech in the text</div>`;
+    var alertnH = `<div class="alert alert-success">There is no hate speech in the text</div>`;
+    var result;
+    $.ajax({
+        url: "http://f9253cc6.ngrok.io/api?data=" + text,
+        method: 'GET',
+        contentType: 'application/json',
+        success: function (result) {
+            result = result.hate ? alertH : alertnH;
+            $("#alerts").html(result);
+        }
+    });
+}
