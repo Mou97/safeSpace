@@ -8,8 +8,8 @@ const Report = require('../controllers/reportHelper');
 
 //handling requests
 router.get("/", async(req, res) => {
-    let reports = await Report.getAllReports()
-    console.log(reports);
+    //let reports = await Report.getAllReports()
+    //console.log(reports);
     res.render('dashboard')
 });
 module.exports = router;

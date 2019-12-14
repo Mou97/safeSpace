@@ -24,7 +24,7 @@ var chart = new Chart(ctx, {
             borderColor: [ 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',],
                 fill:false,
-                data: [20, 5]
+                data: [10, 40]
         }]
     },
 
@@ -41,18 +41,18 @@ var chart = new Chart(ctx, {
   labels: ["january", "february" ,"march", "april", "may", "june" ,"july", "august" ,"september", "october", "november", "december"],
   datasets: [{
     label: "not hate",
-    data: [0, 59, 75, 20, 20, 55, 40,15,45,22,84,16],
+    data: [1, 1, 1, 5, 1, 1, 15,0,4,6,5,0],
     lineTension: 0,
     fill: false,
-    borderColor: 'orange',
-    backgroundColor: 'transparent',
+    borderColor: 'rgba(255, 99, 132, 0.2)',
+    backgroundColor: 'rgba(255, 99, 132, 0.2)',
   },{
     label: "hate",
-    data: [0, 10, 55, 10, 20, 55, 50,15,25,30,74,16],
+    data: [0, 1, 0, 0, 3, 0, 1,2,0,1,1,1],
     lineTension: 0,
     fill: false,
-    borderColor: 'green',
-    backgroundColor: 'transparent',
+    borderColor: 'rgba(54, 162, 235, 0.2)',
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
   }],
   
 },
