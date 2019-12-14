@@ -177,12 +177,14 @@ a:hover {
 
 
 /* Mobile First */
-
 @media (min-width: 42em) {
+    
+}
+
+@media (min-width: 68em) {
     .s-layout__content {
         margin-left: 60px;
     }
-    /* Sidebar */
     .s-sidebar__trigger {
         width: 4em;
     }
@@ -199,16 +201,12 @@ a:hover {
     .s-sidebar__trigger:focus+.s-sidebar__nav {
         width: 15em;
     }
-}
-
-@media (min-width: 68em) {
     .s-layout__content {
         margin-left: 225px;
     }
     .s-sidebar__trigger {
         display: none;
     }
-    /* Sidebar */
     .s-sidebar__trigger {
         display: none;
     }
