@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     console.log('script loaded')
     // get speech from input 
-    let speech = 'i hate you dude'
+    let speech = 'muslims are annoying '
 
     let url = "http://127.0.0.1:5000/api?data=" + speech
 
