@@ -26,7 +26,7 @@ MongoClient.connect(provenDB_URI, {
     .catch(err => {
         console.error('Error connecting to ProvenDB:');
         console.error(err);
-        process.exit();
+        //process.exit();
     });
 
 

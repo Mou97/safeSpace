@@ -1,0 +1,62 @@
+@layout('layouts.main')
+@section('content')
+<div id='stat_container' style="position: relative;">
+    <canvas  id="Chart_full"></canvas>
+    <canvas  id='Chart_months'></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+Chart.defaults.global.defaultFontSize = 50;
+var ctx = document.getElementById('Chart_full').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'pie',
+
+    // The data for our dataset
+    data: {
+        labels: ['hate','not hate'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: [ 'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',],
+            borderColor: [ 'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',],
+            data: [20, 5]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+var ctx = document.getElementById('Chart_months').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'pie',
+
+    // The data for our dataset
+    data: {
+        labels: ['hate','not hate'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: [ 'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',],
+            borderColor: [ 'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',],
+            data: [20, 5]
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        legend: {
+            labels: {
+                // This more specific font property overrides the global property
+                fontColor: 'red',
+                defaultFontSize : 50
+            }
+        }
+    }
+});
+</script>
+@endsection

@@ -4541,3 +4541,18 @@ h2 {
         display: block;
     }
 }
+#stat_container {
+    position: relative;
+}
+#stat_container canvas{
+    width: 50%!important;
+    height: auto!important;;
+    position:absolute;
+    top:0;
+}
+#Chart_full {
+    right: 0;
+}
+#Chart_months {
+    left: 0;
+}

@@ -14,15 +14,15 @@ app.use(express.static("public"));
 app.use(expressEdge);
 app.set("views", __dirname + "/views");
 
-//imports routes 
-const reportsController = require('./controllers/reports')
-const saveReportController = require('./controllers/saveReport')
-//routes
-app.get('/', (req, res) => {
-    res.render('reports')
-})
-app.get('/reports', reportsController)
-app.post('/saveReport', saveReportController)
+//require routes
+const home = require('./routes/home');
+const reports = require('./routes/reports.js');
+const dashboard = require('./routes/dashboard');
+
+//use routes
+app.use('/',home);
+app.use('/reports',reports);
+app.use('/dashboard',dashboard)
 app.get('/submit', (req, res) => {
     res.render('submit')
 })
