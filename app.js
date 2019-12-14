@@ -20,12 +20,12 @@ const reports = require('./routes/reports.js');
 const dashboard = require('./routes/dashboard');
 
 //use routes
-app.use('/',home);
-app.use('/reports',reports);
-app.use('/dashboard',dashboard)
+app.use('/', home);
+app.use('/reports', reports);
+app.use('/dashboard', dashboard);
 app.get('/submit', (req, res) => {
-    res.render('submit')
-})
+    res.render('submit');
+});
 
 
 const port = 3000 || process.env.PORT
