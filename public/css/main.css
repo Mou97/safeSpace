@@ -4541,12 +4541,13 @@ h2 {
 }
 #stat_container {
     position: relative;
+    
 }
 #stat_container canvas{
     width: 50%!important;
     height: auto!important;;
     position:absolute;
-    top:0;
+    top:140px;
 }
 #Chart_full {
     right: 0;
