@@ -19,9 +19,9 @@
 	"homepage": "https://github.com/Mou97/devfest#readme",
 	"dependencies": {
 		"@southbanksoftware/provendb-node-driver": "^0.1.11",
-		"body-parser": "^1.19.0",
+		"body-parser": "^1.20.1",
 		"custom-env": "^1.0.2",
-		"express": "^4.17.1",
+		"express": "^4.18.2",
 		"express-edge": "^2.0.1",
 		"express-fileupload": "^1.1.6",
 		"mongodb": "^3.3.3",
